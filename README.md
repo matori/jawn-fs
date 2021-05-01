@@ -1,4 +1,4 @@
-# 序云FS / JAWN-FS
+# JAWN-FS
 
 Japanese Web Novel Foundational Syntax.
 
@@ -9,7 +9,7 @@ Japanese Web Novel Foundational Syntax.
 小説投稿サイトはいくつもありますが、それぞれ微妙に記法や制限が異なっているのが現状です。  
 そんな中、複数のサイトに投稿するのは手間がかかります。
 
-ならば1つの構文を書くサイト向けに変換すればいいのではないかという発想から作られたものが序云FSです。
+ならば1つの構文を各サイト向けに変換すればいいのではないかという発想から作られたものがJAWN-FSです。
 
 ## 記法
 
@@ -107,7 +107,7 @@ HTML変換の場合、CSSで指定しておけば、ウェブブラウザーに�
 
 ##### どうして強調内のルビが許されるのですか？
 
-各サイトの解釈は分かりませんが、序云FSでは文法的におかしくないという理由で許可しています。
+各サイトの解釈は分かりませんが、JAWN-FSでは文法的におかしくないという理由で許可しています。
 
 ```text
 「急いで！」
@@ -129,6 +129,56 @@ HTML変換の場合、CSSで指定しておけば、ウェブブラウザーに�
 
 サイトの制限で奇妙な文になるよりも、自然なほうを選択したほうがよいという考えからです。
 
+### コメント
+
+行コメントに対応しています。ブロックコメントはありません。
+
+```text
+// コメント
+```
+
+半角`/`（スラッシュ）2連続で、改行までのテキストがコメントになります。  
+また、`//`直前の空白（単体・連続）もコメントとして扱われます。
+
+コメントのみの行は、出力時に行すべてが無視されることが期待されます。
+
+```text
+// コメント
+文字列 // コメント
+
+　　// コメント
+文字列
+```
+
+上記は、次のようになるでしょう。
+
+```text
+文字列
+
+文字列
+```
+
+
+#### エスケープ
+
+`//`を通常のテキストとして扱いたい場合、`//`の直前にバーティカルバーを配置します。
+
+次のように表示したい場合。
+
+```text
+// コメントじゃない
+```
+
+以下のように記述します。
+
+```text
+｜// コメントじゃない
+または
+|// コメントじゃない
+```
+
+不安な場合、すべての`/`の直前にバーティカルバーを配置しても構いません。`｜/`は強制的に`/`に変換され、通常のテキストとして扱われます。
+
 ## 変換ツール
 
 作成中です。
@@ -136,11 +186,11 @@ HTML変換の場合、CSSで指定しておけば、ウェブブラウザーに�
 ## textlint使用者向け
 
 - [textlint-plugin-jawn](https://github.com/matori/textlint-plugin-jawn)  
-  序云FSを[textlint](https://github.com/textlint/textlint)で扱えるようにするためのプラグイン。
+  JAWN-FSを[textlint](https://github.com/textlint/textlint)で扱えるようにするためのプラグイン。
 - [textlint-rule-max-ruby-len](https://github.com/matori/textlint-rule-max-ruby-len)  
   ルビ親文字とルビ文字の最大数を制限する[textlint](https://github.com/textlint/textlint)ルール。
 
 ## 開発者向け
 
 - [jawn-to-ast](https://github.com/matori/jawn-to-ast)  
-  序云FSを[textlint](https://github.com/textlint/textlint)互換のASTにパースするライブラリ。
+  JAWN-FSを[textlint](https://github.com/textlint/textlint)互換のASTにパースするライブラリ。
