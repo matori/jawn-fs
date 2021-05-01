@@ -1,4 +1,4 @@
-# 序云FS / JAWN-FS
+# JAWN-FS
 
 Japanese Web Novel Foundational Syntax.
 
@@ -9,7 +9,7 @@ Japanese Web Novel Foundational Syntax.
 小説投稿サイトはいくつもありますが、それぞれ微妙に記法や制限が異なっているのが現状です。  
 そんな中、複数のサイトに投稿するのは手間がかかります。
 
-ならば1つの構文を各サイト向けに変換すればいいのではないかという発想から作られたものが序云FSです。
+ならば1つの構文を各サイト向けに変換すればいいのではないかという発想から作られたものがJAWN-FSです。
 
 ## 記法
 
@@ -107,7 +107,7 @@ HTML変換の場合、CSSで指定しておけば、ウェブブラウザーに�
 
 ##### どうして強調内のルビが許されるのですか？
 
-各サイトの解釈は分かりませんが、序云FSでは文法的におかしくないという理由で許可しています。
+各サイトの解釈は分かりませんが、JAWN-FSでは文法的におかしくないという理由で許可しています。
 
 ```text
 「急いで！」
@@ -186,11 +186,11 @@ HTML変換の場合、CSSで指定しておけば、ウェブブラウザーに�
 ## textlint使用者向け
 
 - [textlint-plugin-jawn](https://github.com/matori/textlint-plugin-jawn)  
-  序云FSを[textlint](https://github.com/textlint/textlint)で扱えるようにするためのプラグイン。
+  JAWN-FSを[textlint](https://github.com/textlint/textlint)で扱えるようにするためのプラグイン。
 - [textlint-rule-max-ruby-len](https://github.com/matori/textlint-rule-max-ruby-len)  
   ルビ親文字とルビ文字の最大数を制限する[textlint](https://github.com/textlint/textlint)ルール。
 
 ## 開発者向け
 
 - [jawn-to-ast](https://github.com/matori/jawn-to-ast)  
-  序云FSを[textlint](https://github.com/textlint/textlint)互換のASTにパースするライブラリ。
+  JAWN-FSを[textlint](https://github.com/textlint/textlint)互換のASTにパースするライブラリ。
