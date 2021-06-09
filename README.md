@@ -194,3 +194,5 @@ HTML変換の場合、CSSで指定しておけば、ウェブブラウザーに�
 
 - [jawn-to-ast](https://github.com/matori/jawn-to-ast)  
   JAWN-FSを[textlint](https://github.com/textlint/textlint)互換のASTにパースするライブラリ。
+- [jawngen](https://github.com/matori/jawngen)  
+  JAWN-FSのASTから各サービス向けの構文を生成するライブラリ。
